@@ -4,6 +4,17 @@ def has_negatives(a):
     """
     # Your code here
 
+    # loop through list
+    # store integers as key
+    # find corresponding ints and increment count +1
+    # return result of ints > 1
+
+    my_dict = {}
+    count = 0
+
+    for nums in a:
+        my_dict[nums] = a[nums]
+
     return result
 
 
