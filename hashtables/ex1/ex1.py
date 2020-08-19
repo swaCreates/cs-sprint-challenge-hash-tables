@@ -19,14 +19,18 @@ def get_indices_of_item_weights(weights, length, limit):
         # print(i, weight)
         if weight not in my_dict:
             my_dict[weight] = i
+        else: 
+            my_dict[weight] += i
 
     for i, weight in enumerate(weights):
         weight2 = limit - weight
 
-        if limit - my_dict[weight] == weight2:
-            return my_dict[weights[i]]
-    # if limit - my_dict[weight] == weight2:
-    #     return my_dict[weights[i]]
-    # else:
-    #     my_dict[weights[i]] += 1
+        # if the result of limit - weight exists in my_dict:
+        if weight2 in my_dict:
+            # return in an arr the index and key
+            indexes_list = [i, my_dict[weight2]]
+            # making sure the larger number is before the smaller
+            indexes_list.sort(reverse=True)
+            return indexes_list
+
     return None
